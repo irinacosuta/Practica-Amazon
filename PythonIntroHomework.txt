@@ -1,0 +1,63 @@
+f=open('numbers.txt')
+def process_line(line):
+    return list(map(float,str.split(line[:-1],',')))
+nums=[process_line(line) for line in f]
+print(nums)
+
+
+
+print(nums)
+
+
+
+nums3=[]
+for i in range(0,len(nums)):
+    nums3+=nums[i]
+list(nums3)
+
+
+
+for i in range(0,len(nums)):
+    s=0
+    for j in range(0,len(nums[i])):
+        s+=nums[i][j]
+    print("The sum of the numbers belonging to line ",i+1," is ",s)
+
+
+
+s=0
+for i in range(0,len(nums)):
+    for j in range(0,len(nums[i])):
+        s+=nums[i][j]
+print("The sum of all the numbers is ",s)
+
+
+
+nums4=list(filter(lambda x:x>30.1,nums3))
+nums4_a=[]
+for i in range(0,len(nums3)):
+    if nums3[i]>30.1:
+        nums4_a.append(nums3[i])
+list(nums4)
+list(nums4_a)
+if(nums4!=1):
+    print("There are ",len(nums4)," numbers larger than 30.1 in the initial list.")
+    print("There are ",len(nums4_a)," numbers larger than 30.1 in the initial list.")
+else:
+    print("There is only one number larger than 30.1 in the initial list.")
+    print("There is only one number larger than 30.1 in the initial list.")
+
+
+
+for i in range(1,101):
+    aux=list(filter(lambda x:x<i,nums3))
+    c=0;
+    for j in range(0,len(nums3)):
+        if nums3[j]<i:
+            c+=1
+    if c!=1:
+        print("There are ",len(aux)," numbers smaller than ",i," in the initial list.")
+        print("There are ",c," numbers smaller than ",i," in the initial list.")
+    else: 
+        print("There is only one number smaller than ",i," in the initial list.")
+        print("There is only one number smaller than ",i," in the initial list.")
